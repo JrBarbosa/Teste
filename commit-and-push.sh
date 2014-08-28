@@ -391,7 +391,7 @@ if [[ $LOCAL != "master" || $PODECOMMIT = 1 ]];then
                         fi
 	       	fi
 		# Inicia o processo de push para o repositorio remoto e atualizacao dos outros ambientes
-		if [ $PODEPUSH = 1 ]; then
+		if [[ $PODEPUSH = 1 ]]; then
 			echo ""
 			PUSH
 	                echo ""
@@ -400,7 +400,7 @@ if [[ $LOCAL != "master" || $PODECOMMIT = 1 ]];then
 			echo "Erro no commit, impossivel fazer o push"
 			exit
 		fi
-		if [ $PUSHDENOVO = 1 ]; then
+		if [[ $PUSHDENOVO = 1 ]]; then
                         echo ""
                         PUSH
                         echo ""
