@@ -289,6 +289,8 @@ else
 	STATUS=1
 fi
 
+echo "<<STATUS=${STATUS}>>>>"
+
 }
 
 # FUNCOES FIM
@@ -387,6 +389,7 @@ if [[ $LOCAL != "master" || $PODECOMMIT = 1 ]];then
                                 exit
                         fi
 	       	fi
+		echo "<<<<<<${PODEPUSH}>>>>>"
 		# Inicia o processo de push para o repositorio remoto e atualizacao dos outros ambientes
 		if [ $PODEPUSH = 1 ]; then
 			echo ""
