@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 adfadfadfaddfiaudfoiaudfoasdufiodasu
-=======
-adfadfadfasd
->>>>>>> bf8bb2f0dead91a824b320d360b749caf3e964be
 
 adfasdfasdfs
 
