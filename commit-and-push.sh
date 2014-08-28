@@ -154,6 +154,7 @@ else
 			echo "### CONTINUANDO COM AS SUAS ALTERACOES E COM AS ALTERACOES DO REPOSITORIO ####"
 			echo " "
 			PULL
+			PODEPUSH=1
 		;;
 		'minhas') 
 			echo "### TEM CERTEZA DE QUE VOCE DESEJA ELIMINAR AS ALTERACOES DO REPOSITORIO E MANTER AS SUAS ALTERACOES? [ s / n ] ###";read CONFIRMA
@@ -164,7 +165,8 @@ else
 					echo "### COMMITANDO SUAS ALTERACOES E ELIMANDO AS ALTERACOES DO REPOSITORIO ###";
 					echo " "
 					echo " "
-					git pull -s ours
+					PULLOURS
+					PODEPUSH=1
 					if [ $? = 0 ]; then
 					        echo " "
 						echo "### REPOSITORIO ATUALIZADO COM AS SUAS ALTERACOES, COM SUCESSO! ###"
@@ -193,7 +195,8 @@ else
                                         echo "### ELIMINANDO SUAS ALTERACOES E MANTENDO AS DO REPOSITORIO ###";
 					echo " "
 					echo " "
-                                        git pull -s recursive -X theirs
+                                        PULLTHEIRS
+					PODEPUSH=1
                                         if [ $? = 0 ]; then
                                                 echo " "
                                                 echo "### SUA VERSAO FOI ATUALIZADA COM AS ALTERACOES DO REPOSITORIO, COM SUCESSO! ###"
