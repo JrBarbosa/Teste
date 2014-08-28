@@ -145,20 +145,20 @@ else
 
 	echo " "
 	echo " "
-	echo "################################################################################################################################################"
-	echo "#DESEJA CONTINUAR COM AS ALTERACOES, ELIMINAR AS ALTERACOES DO REPOSITORIO OU ELIMINAR AS SUAS ALTERACOES? [ continuar / minhas / repositorio ]#"
-	echo "################################################################################################################################################"
+	echo "######################################################################################################################################################"
+	echo "#DESEJA CONTINUAR COM AS ALTERACOES, ELIMINAR AS ALTERACOES DO REPOSITORIO OU ELIMINAR AS SUAS ALTERACOES? [ [c]ontinuar / [m]inhas / [r]epositorio ]#"
+	echo "######################################################################################################################################################"
 	echo " "
 	echo " "
 	read CONTINUA
 	case $CONTINUA in
-		'continuar')
+		'c')
 			echo "### CONTINUANDO COM AS SUAS ALTERACOES E COM AS ALTERACOES DO REPOSITORIO ####"
 			echo " "
 			PULL
 			PUSHDENOVO=1
 		;;
-		'minhas') 
+		'm') 
 			echo "### TEM CERTEZA DE QUE VOCE DESEJA ELIMINAR AS ALTERACOES DO REPOSITORIO E MANTER AS SUAS ALTERACOES? [ s / n ] ###";read CONFIRMA
 			case $CONFIRMA in
 				's')
@@ -189,7 +189,7 @@ else
 				;;
 			esac
 		;;
-		'repositorio')
+		'r')
 			echo "### TEM CERTEZA DE QUE VOCE DESEJA ELIMINAR AS SUAS ALTERACOES E MANTER A DO REPOSITORIO? [ s / n ] ###";read CONFIRMAREPO
                         case $CONFIRMAREPO in
                                 's')
