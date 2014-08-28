@@ -138,6 +138,7 @@ else
 	PULL
 	if [ $? = 0 ]; then
 		echo "Ambiente atualizado com sucesso, continuando com o push.."
+		PUSH
 	else
 		echo "Possivel conflito, por favor resolva o conflito para continuar.... Deseja ver o diff do conflito? [ s / n ]";read VERDIFF
 		case $VERDIFF in
