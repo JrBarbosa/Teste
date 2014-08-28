@@ -183,6 +183,7 @@ else
 				;;
 				'*')
 					echo "### OPCAO ERRADA, COMMIT CANCELADO ###"
+					exit
 				;;
 			esac
 		;;
@@ -213,6 +214,7 @@ else
                                 ;;
                                 '*')
                                         echo "### OPCAO ERRADA, COMMIT CANCELADO ###"
+					exit
                                 ;;
 			esac
 		;;
