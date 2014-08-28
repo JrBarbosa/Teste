@@ -145,12 +145,14 @@ else
 
 	echo " "
 	echo " "
-	echo "###############################################################################################################################################"
-	echo "#DESEJA CONTINUAR COM AS ALTERACOES, ELIMINAR AS ALTERACOES DO REPOSITORIO OU ELIMINAR AS SUAS ALTERACOES? [ continua / minhas / repositorio ]#"
-	echo "###############################################################################################################################################"
+	echo "################################################################################################################################################"
+	echo "#DESEJA CONTINUAR COM AS ALTERACOES, ELIMINAR AS ALTERACOES DO REPOSITORIO OU ELIMINAR AS SUAS ALTERACOES? [ continuar / minhas / repositorio ]#"
+	echo "################################################################################################################################################"
+	echo " "
+	echo " "
 	read CONTINUA
 	case $CONTINUA in
-		'continua')
+		'continuar')
 			echo "### CONTINUANDO COM AS SUAS ALTERACOES E COM AS ALTERACOES DO REPOSITORIO ####"
 			echo " "
 			PULL
