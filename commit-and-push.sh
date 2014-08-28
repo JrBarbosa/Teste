@@ -168,7 +168,7 @@ else
 					echo " "
 					echo " "
 					PULLOURS
-					PODEPUSH=1
+					PUSHDENOVO=1
 					if [ $? = 0 ]; then
 					        echo " "
 						echo "### REPOSITORIO ATUALIZADO COM AS SUAS ALTERACOES, COM SUCESSO! ###"
@@ -199,7 +199,7 @@ else
 					echo " "
 					echo " "
                                         PULLTHEIRS
-					PODEPUSH=1
+					PUSHDENOVO=1
                                         if [ $? = 0 ]; then
                                                 echo " "
                                                 echo "### SUA VERSAO FOI ATUALIZADA COM AS ALTERACOES DO REPOSITORIO, COM SUCESSO! ###"
