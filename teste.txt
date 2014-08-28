@@ -15,3 +15,5 @@ alteracao claudio
 aqui tem o hotfix do ninja - parte 3 - agora deve melar o outro commit
 
 ninja continuando com as ateracoes
+
+commit que deve perder de novo
