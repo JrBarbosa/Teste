@@ -65,7 +65,7 @@ git pull
 if [ $? = 0 ]; then
         echo " "
         echo " "
-        echo "Ambiente atualizado com sucesso!"
+        echo "Ambiente atualizado com sucesso PULL!"
         echo " "
         echo " "
 else
@@ -87,7 +87,7 @@ git pull -s ours
 if [ $? = 0 ]; then
 	echo " "
 	echo " "
-	echo "Ambiente atualizado com sucesso!"
+	echo "Ambiente atualizado com sucesso OURS!"
 	echo " "
 	echo " "
 else
@@ -108,7 +108,7 @@ git pull -s recursive -X theirs
 if [ $? = 0 ]; then
         echo " "
         echo " "
-        echo "Ambiente atualizado com sucesso!"
+        echo "Ambiente atualizado com sucesso THEIRS!"
         echo " "
         echo " "
 else
@@ -154,7 +154,6 @@ else
 			echo "### CONTINUANDO COM AS SUAS ALTERACOES E COM AS ALTERACOES DO REPOSITORIO ####"
 			echo " "
 			PULL
-			PODECOMMIT=1
 		;;
 		'minhas') 
 			echo "### TEM CERTEZA DE QUE VOCE DESEJA ELIMINAR AS ALTERACOES DO REPOSITORIO E MANTER AS SUAS ALTERACOES? [ s / n ] ###";read CONFIRMA
