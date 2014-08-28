@@ -132,10 +132,91 @@ if [ $? = 0 ]; then
         echo "Repositorio remoto atualizado com sucesso!!"
 	echo " "
         echo " "
+	exit
 else
 	echo " "
-        echo "Push rejeitado, atualizando sua versao para enviar as alteracoes...."
-	PULL
+	echo " "
+	echo "###############################################################################################"
+        echo "####### PUSH REJEITADO, VEJA AS ALTERACOES DO REPOSITORIO E DEPOIS CONTINUE COM O COMMIT ######"
+	echo "###############################################################################################"
+	echo " "
+	echo " "
+	git diff --color origin/${LOCAL}
+
+	echo " "
+	echo " "
+	echo "################################################################################################################################################"
+	echo "# DESEJA CONTINUAR COM AS ALTERACOES, ELIMINAR AS ALTERACOES DO REPOSITORIO OU ELIMINAR AS SUAS ALTERACOES? [ continua / minhas / repositorio ] #"
+	echo "################################################################################################################################################"
+	read CONTINUA
+	case $CONTINUA in
+		'continua')
+			echo "### CONTINUANDO COM AS SUAS ALTERACOES E COM AS ALTERACOES DO REPOSITORIO ####"
+			echo " "
+			PULL
+		;;
+		'minhas') 
+			echo "### TEM CERTEZA DE QUE VOCE DESEJA ELIMINAR AS ALTERACOES DO REPOSITORIO E MANTER AS SUAS ALTERACOES? [ s / n ] ###";read CONFIRMA
+			case $CONFIRMA in
+				's')
+					echo " "
+					echo " "
+					echo "### COMMITANDO SUAS ALTERACOES E ELIMANDO AS ALTERACOES DO REPOSITORIO ###";
+					echo " "
+					echo " "
+					git pull -s ours
+					if [ $? = 0 ]; then
+					        echo " "
+						echo "### REPOSITORIO ATUALIZADO COM AS SUAS ALTERACOES, COM SUCESSO! ###"
+					        echo " "
+					else
+					        echo " "
+						echo "Falha na atualizacao do ambiente \ err PULLOURS"
+						exit
+					fi
+				;;
+				'n')
+					echo "### COMMIT CANCELADO ###"
+					exit
+				;;
+				'*')
+					echo "### OPCAO ERRADA, COMMIT CANCELADO ###"
+				;;
+			esac
+		;;
+		'repositorio')
+			echo "### TEM CERTEZA DE QUE VOCE DESEJA ELIMINAR AS SUAS ALTERACOES E MANTER A DO REPOSITORIO? [ s / n ] ###";read CONFIRMAREPO
+                        case $CONFIRMAREPO in
+                                's')
+					echo " "
+					echo " "
+                                        echo "### ELIMINANDO SUAS ALTERACOES E MANTENDO AS DO REPOSITORIO ###";
+					echo " "
+					echo " "
+                                        git pull -s recursive -X theirs
+                                        if [ $? = 0 ]; then
+                                                echo " "
+                                                echo "### SUA VERSAO FOI ATUALIZADA COM AS ALTERACOES DO REPOSITORIO, COM SUCESSO! ###"
+                                                echo " "
+                                        else
+                                                echo " "
+                                                echo "Falha na atualizacao do ambiente \ err PULLTHEIRS"
+                                                exit
+                                        fi
+				;;
+                                'n')
+                                        echo "### COMMIT CANCELADO ###"
+                                        exit
+                                ;;
+                                '*')
+                                        echo "### OPCAO ERRADA, COMMIT CANCELADO ###"
+                                ;;
+			esac
+		;;
+	esac
+
+
+exit
 	if [ $? = 0 ]; then
 		echo "Ambiente atualizado com sucesso, continuando com o push.."
 		PUSH
