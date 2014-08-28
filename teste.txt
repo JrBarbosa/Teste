@@ -13,3 +13,5 @@ alteracao claudio
 
 
 aqui tem o hotfix do ninja - parte 2
+
+alteracao que podera ser perdida
