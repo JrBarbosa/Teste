@@ -314,7 +314,7 @@ fi
 
 test "$STATUS" = 0 && echo "Nao existe nada para commitar, saindo" && exit
 
-test "$TEMCONFLITO" = 1 && echo "POR FAVOR RESOLVA O CONFLITO ANTES DE COMMITAR" && echo $GITSTATUS && exit
+#test "$TEMCONFLITO" = 1 && echo "POR FAVOR RESOLVA O CONFLITO ANTES DE COMMITAR" && echo $GITSTATUS && exit
 
 
 if [[ $LOCAL != "master" || $PODECOMMIT = 1 ]];then
