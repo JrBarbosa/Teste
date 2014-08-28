@@ -20,6 +20,8 @@ novo commit destruidor do ninja - alteracao do ninja
 novo commit destruidor do ninja - agora com conflito
 >>>>>>> 8df42c5e9fca82d71b5b9efa1a4056337eb4dc5d
 
+nao era para tirar o conflito?
+
 ninja continuando com as ateracoes
 
 commit que deve perder de novo
