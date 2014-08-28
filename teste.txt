@@ -12,6 +12,6 @@ adfadfads
 alteracao claudio
 
 
-aqui tem o hotfix do ninja - parte 2
+aqui tem o hotfix do ninja - parte 3 - agora deve melar o outro commit
 
 ninja continuando com as ateracoes
