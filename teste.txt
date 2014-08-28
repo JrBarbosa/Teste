@@ -21,7 +21,7 @@ novo commit destruidor do ninja - agora com conflito
 >>>>>>> 8df42c5e9fca82d71b5b9efa1a4056337eb4dc5d
 
 <<<<<<< HEAD
-nao era para tirar o conflito?
+nao era para tirar o conflito? uehuehuehueh
 =======
 foi com conflito e tudo
 >>>>>>> eb4c4f0263a2301ca981da5920b572f03883f7be
