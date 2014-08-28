@@ -402,6 +402,16 @@ if [[ $LOCAL != "master" || $PODECOMMIT = 1 ]];then
 			echo "Erro no commit, impossivel fazer o push"
 			exit
 		fi
+		if [ $PUSHDENOVO = 1 ]; then
+                        echo ""
+                        PUSH
+                        echo ""
+                        #PULLOUTROS
+                else
+                        echo "Erro no commit, impossivel fazer o push"
+                        exit
+                fi
+
 	fi		
 fi
 
