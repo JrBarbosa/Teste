@@ -284,7 +284,14 @@ ISBEHIND=`git status | grep "Your branch is behind"`
 NABEHIND=`echo ${ISBEHIND} | awk -F'by' '{ print $2}' | awk -F'commit' '{ print $1}'`
 # Coleta a branch atual
 LOCAL=`git branch | awk -F "* " '{print $2}'`
+#CONFLITO
+ISCONFLITED=`git status | grep "both modified"`
 
+if [[ -z $ISCONFLITED ]];then
+        TEMCONFLITO=0
+else
+        TEMCONFLITO=1
+fi
 
 if [[ -z $GITSTATUS ]];then
 	STATUS=0
@@ -306,6 +313,8 @@ STATUS=1
 fi
 
 test "$STATUS" = 0 && echo "Nao existe nada para commitar, saindo" && exit
+
+test "$TEMCONFLITO" = 1 && echo "POR FAVOR RESOLVA O CONFLITO ANTES DE COMMITAR" && echo $GITSTATUS && exit
 
 
 if [[ $LOCAL != "master" || $PODECOMMIT = 1 ]];then
