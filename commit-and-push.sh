@@ -141,6 +141,7 @@ else
 	echo "###############################################################################################"
 	echo " "
 	echo " "
+	git remote update
 	git diff --color origin/${LOCAL}
 
 	echo " "
