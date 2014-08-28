@@ -226,7 +226,6 @@ else
 		;;
 	esac
 
-
 #exit
 #	if [ $? = 0 ]; then
 #		echo "Ambiente atualizado com sucesso, continuando com o push.."
