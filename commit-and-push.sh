@@ -145,15 +145,16 @@ else
 
 	echo " "
 	echo " "
-	echo "################################################################################################################################################"
-	echo "# DESEJA CONTINUAR COM AS ALTERACOES, ELIMINAR AS ALTERACOES DO REPOSITORIO OU ELIMINAR AS SUAS ALTERACOES? [ continua / minhas / repositorio ] #"
-	echo "################################################################################################################################################"
+	echo "###############################################################################################################################################"
+	echo "#DESEJA CONTINUAR COM AS ALTERACOES, ELIMINAR AS ALTERACOES DO REPOSITORIO OU ELIMINAR AS SUAS ALTERACOES? [ continua / minhas / repositorio ]#"
+	echo "###############################################################################################################################################"
 	read CONTINUA
 	case $CONTINUA in
 		'continua')
 			echo "### CONTINUANDO COM AS SUAS ALTERACOES E COM AS ALTERACOES DO REPOSITORIO ####"
 			echo " "
 			PULL
+			PODECOMMIT=1
 		;;
 		'minhas') 
 			echo "### TEM CERTEZA DE QUE VOCE DESEJA ELIMINAR AS ALTERACOES DO REPOSITORIO E MANTER AS SUAS ALTERACOES? [ s / n ] ###";read CONFIRMA
@@ -213,23 +214,27 @@ else
                                 ;;
 			esac
 		;;
+		'*')
+			echo "### OPCAO ERRADA, COMMIT CANCELADO ###"
+			exit
+		;;
 	esac
 
 
-exit
-	if [ $? = 0 ]; then
-		echo "Ambiente atualizado com sucesso, continuando com o push.."
-		PUSH
-	else
-		echo "Possivel conflito, por favor resolva o conflito para continuar.... Deseja ver o diff do conflito? [ s / n ]";read VERDIFF
-		case $VERDIFF in
-			's') git diff --color;;
-			'n') echo "ATENCAO! Nao sera possivel continuar com o commit, sem que o conflito seja resolvido MANUALMENTE, procure por >>>HEAD em seus arquivos!";;
-			*) echo "Opcao invalida!";;
-		esac
-		echo "Saindo do commit, por favor RESOLVA O CONFLITO e tente novamente!"
-		exit
-	fi
+#exit
+#	if [ $? = 0 ]; then
+#		echo "Ambiente atualizado com sucesso, continuando com o push.."
+#		PUSH
+#	else
+#		echo "Possivel conflito, por favor resolva o conflito para continuar.... Deseja ver o diff do conflito? [ s / n ]";read VERDIFF
+#		case $VERDIFF in
+#			's') git diff --color;;
+#			'n') echo "ATENCAO! Nao sera possivel continuar com o commit, sem que o conflito seja resolvido MANUALMENTE, procure por >>>HEAD em seus arquivos!";;
+#			*) echo "Opcao invalida!";;
+#		esac
+#		echo "Saindo do commit, por favor RESOLVA O CONFLITO e tente novamente!"
+#		exit
+#	fi
 fi
 
 sleep 3
