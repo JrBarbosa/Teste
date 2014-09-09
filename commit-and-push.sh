@@ -405,7 +405,7 @@ if [[ $LOCAL != "master" || $PODECOMMIT = 1 ]];then
 			echo ""
 			PUSH
 	                echo ""
-        	        #PULLOUTROS
+        	        PULLOUTROS
 		else
 			echo "Erro no commit, impossivel fazer o push"
 			exit
@@ -414,7 +414,7 @@ if [[ $LOCAL != "master" || $PODECOMMIT = 1 ]];then
                         echo ""
                         PUSH
                         echo ""
-                        #PULLOUTROS
+                        PULLOUTROS
                 else
                         echo "Erro no commit, impossivel fazer o push"
                         exit
